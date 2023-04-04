@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="inventory_stock_movement_report" model="ir.ui.view">
+        <field name="name">Inventory Movement Report</field>
+        <field name="model">inventory_movement.report</field>
+        <field name="arch" type="xml">
+            <form string="Report Options">
+                <group>
+                    <group>
+                        <field name="company_id"/>
+                    </group>
+                    <group>
+                        <field name="product"/>
+                    </group>
+                    <group>
+                        <field name="date_from"/>
+                        <field name="date_to"/>
+                    </group>
+                    <group>
+                        <field name="warehouse_id" invisible="1"/>
+                        <field name="stock_warehouse"/>
+                        <field name="stock_location"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="aged_report_xlx" string="Export - EXCEL" type="object" default_focus="1" class="oe_highlight"/>
+                    <button string="Cancel" class="btn btn-default" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="inventory_movement_report_window" model="ir.actions.act_window">
+        <field name="name">Inventory Movement Report</field>
+        <field name="res_model">inventory_movement.report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="inventory_stock_movement_report"/>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="inventory_movement_report" name="Inventory Movement Report" parent="stock.menu_warehouse_report" sequence="110" action="inventory_movement_report_window"/>
+
+</odoo>
