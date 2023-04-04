@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <report
+         id="inventory_movement"
+         model="res.partner"
+         string="Excel Inventory Movement Report"
+         report_type="xlsx"
+         name="inventory_movement_report.inventory_movement"
+         file="inventory_movement_report.inventory_movement"
+         attachment_use="False"/>
+
+    </data>
+</odoo>

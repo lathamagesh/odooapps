@@ -1,0 +1,25 @@
+{
+    'name': 'Inventory Movement Report',
+    'version': '1.0.0',
+    'sequence': 1,
+    'summary': 'Inventory Movement Report in Excel',
+    'description': """  This module helps to view product movement [IN/OUT] from selected warehouse. """,
+    'license': 'OPL-1',
+    'category': 'Stock',
+    'author': 'JETZERP',
+    'website': '',
+    'images': [],
+    'depends': ['account','stock',],
+    'data': [
+        'wizards/inventory_movemet_view.xml',
+        'reports/report.xml',
+        'security/ir.model.access.csv',
+    ],
+    # 'images': [
+    #     'static/description/logoo.png',
+    # ],
+    'pre_init_hook':'pre_init_check',
+    'installable': True,
+    'application': True,
+    'auto_install': False,
+}
